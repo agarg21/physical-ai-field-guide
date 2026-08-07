@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A practical four-week guide to the foundations, systems, data, and models behind Physical AI."
+    />
+    <meta name="theme-color" content="#f4f0e8" />
+    <title>Physical AI — A Four-Week Technical Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Physical AI guide home">
+        <span class="brand-mark" aria-hidden="true">PA</span>
+        <span>Physical AI Field Guide</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#architecture">Architecture</a>
+        <a href="#curriculum">Four weeks</a>
+        <a href="#library">Library</a>
+      </nav>
+      <a
+        class="repo-link"
+        href="https://github.com/agarg21/physical-ai-field-guide"
+        target="_blank"
+        rel="noreferrer"
+      >
+        View repository <span aria-hidden="true">↗</span>
+      </a>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="hero-copy">
+          <p class="eyebrow">A focused technical path · 4 weeks · 7–10 hours/week</p>
+          <h1>Learn how intelligence meets the <em>physical world.</em></h1>
+          <p class="hero-intro">
+            A practical route through robotics foundations, simulation, learning from action data,
+            and modern vision-language-action systems—sequenced for people who want to understand
+            and build, not just collect papers.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#curriculum">Start the curriculum</a>
+            <a class="button secondary" href="#library">Browse 26 resources</a>
+          </div>
+          <div class="hero-meta" aria-label="Guide summary">
+            <div><strong>32</strong><span>core hours</span></div>
+            <div><strong>4</strong><span>weekly outputs</span></div>
+            <div><strong>1</strong><span>credible experiment</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="Physical AI feedback loop illustration">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="loop-card loop-sense"><span>01</span><strong>Sense</strong><small>observe state</small></div>
+          <div class="loop-card loop-think"><span>02</span><strong>Decide</strong><small>plan or infer</small></div>
+          <div class="loop-card loop-act"><span>03</span><strong>Act</strong><small>control motion</small></div>
+          <div class="loop-card loop-learn"><span>04</span><strong>Learn</strong><small>use evidence</small></div>
+          <div class="loop-core">
+            <span>closed</span>
+            <strong>LOOP</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="principle-strip" aria-label="Learning principles">
+        <p><span>01</span> Foundations before frontier</p>
+        <p><span>02</span> Systems before model names</p>
+        <p><span>03</span> Evidence before claims</p>
+      </section>
+
+      <section class="section architecture-section" id="architecture">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">The system, at a glance</p>
+            <h2>A map of Physical AI</h2>
+          </div>
+          <p>
+            Think in responsibilities, not rigid boxes. Classical systems keep these layers explicit;
+            end-to-end policies collapse several into one model; most deployed systems are hybrids.
+          </p>
+        </div>
+
+        <div class="architecture-map">
+          <div class="architecture-flow">
+            <article class="arch-card world">
+              <span class="arch-index">01</span>
+              <div><h3>World</h3><p>Physical scene or simulator</p></div>
+            </article>
+            <div class="flow-arrow" aria-hidden="true">→</div>
+            <article class="arch-card sense">
+              <span class="arch-index">02</span>
+              <div><h3>Sense</h3><p>Cameras, encoders, state estimation</p></div>
+            </article>
+            <div class="flow-arrow" aria-hidden="true">→</div>
+            <article class="arch-card reason">
+              <span class="arch-index">03</span>
+              <div><h3>Represent & reason</h3><p>World models, language, planning</p></div>
+            </article>
+            <div class="flow-arrow" aria-hidden="true">→</div>
+            <article class="arch-card action">
+              <span class="arch-index">04</span>
+              <div><h3>Generate action</h3><p>Policy, motion plan, controller</p></div>
+            </article>
+            <div class="flow-arrow" aria-hidden="true">→</div>
+            <article class="arch-card body">
+              <span class="arch-index">05</span>
+              <div><h3>Robot body</h3><p>Hardware, actuators, contact</p></div>
+            </article>
+          </div>
+
+          <div class="learning-plane">
+            <div class="learning-label"><span>Learning plane</span><small>improves the loop</small></div>
+            <div class="learning-items">
+              <span>Demonstrations</span><span>Datasets & logs</span><span>Simulation</span><span>Evaluation</span>
+            </div>
+          </div>
+          <div class="evidence-rail">
+            <span>Safety</span><span>Observability</span><span>Provenance</span><span>Reproducibility</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section curriculum-section" id="curriculum">
+        <div class="section-heading curriculum-heading">
+          <div>
+            <p class="eyebrow">The curriculum</p>
+            <h2>Four weeks from loop to lab</h2>
+          </div>
+          <p>Each week has a bounded core, a tangible output, and optional depth that stays outside the time budget.</p>
+        </div>
+
+        <div class="week-tabs" role="tablist" aria-label="Curriculum weeks">
+          <button class="week-tab active" role="tab" aria-selected="true" aria-controls="week-1" data-week="1">
+            <span>Week 01</span> Foundations
+          </button>
+          <button class="week-tab" role="tab" aria-selected="false" aria-controls="week-2" data-week="2">
+            <span>Week 02</span> Systems
+          </button>
+          <button class="week-tab" role="tab" aria-selected="false" aria-controls="week-3" data-week="3">
+            <span>Week 03</span> Generalists
+          </button>
+          <button class="week-tab" role="tab" aria-selected="false" aria-controls="week-4" data-week="4">
+            <span>Week 04</span> Evidence
+          </button>
+        </div>
+
+        <div class="week-panel active" id="week-1" role="tabpanel">
+          <div class="week-summary">
+            <span class="week-number">01</span>
+            <div><p class="eyebrow">Robot fundamentals</p><h3>Understand the closed loop</h3></div>
+            <p>Build the vocabulary for bodies, frames, observations, actions, policies, controllers, and environments.</p>
+          </div>
+          <ol class="lesson-list">
+            <li><span class="lesson-time">2.5h</span><div><strong>Rigid motion & kinematics</strong><p>Modern Robotics introductions and selected videos · L02</p></div></li>
+            <li><span class="lesson-time">2h</span><div><strong>Manipulation as a system</strong><p>MIT introduction and robot/simulation chapter · L03</p></div></li>
+            <li><span class="lesson-time">2h</span><div><strong>Dynamics & feedback</strong><p>Underactuated overview and CartPole example · L04</p></div></li>
+            <li><span class="lesson-time">1h</span><div><strong>Draw the loop</strong><p>Annotate observation → decision → action for CartPole and an arm</p></div></li>
+          </ol>
+          <aside class="deliverable"><span>Weekly output</span><p>A one-page explanation of the seven essential system concepts.</p></aside>
+        </div>
+
+        <div class="week-panel" id="week-2" role="tabpanel" hidden>
+          <div class="week-summary">
+            <span class="week-number">02</span>
+            <div><p class="eyebrow">Simulation & learning</p><h3>Connect software to behavior</h3></div>
+            <p>See how robot software, physics environments, imitation learning, and reinforcement learning fit together.</p>
+          </div>
+          <ol class="lesson-list">
+            <li><span class="lesson-time">1.5h</span><div><strong>Robot middleware</strong><p>ROS 2 concepts: nodes, topics, services, actions, bags · L05</p></div></li>
+            <li><span class="lesson-time">2.5h</span><div><strong>Physics & task environments</strong><p>Run MuJoCo and Gymnasium examples · L06–L07</p></div></li>
+            <li><span class="lesson-time">3h</span><div><strong>Behavior cloning & policy gradients</strong><p>Two selected CS285 lectures · L11–L13</p></div></li>
+            <li><span class="lesson-time">1.5h</span><div><strong>Modern action generation</strong><p>Diffusion Policy overview and architecture · L14</p></div></li>
+          </ol>
+          <aside class="deliverable"><span>Weekly output</span><p>A reproducible reset/step trace and an IL-versus-RL comparison.</p></aside>
+        </div>
+
+        <div class="week-panel" id="week-3" role="tabpanel" hidden>
+          <div class="week-summary">
+            <span class="week-number">03</span>
+            <div><p class="eyebrow">Data & generalist policies</p><h3>Read the VLA landscape clearly</h3></div>
+            <p>Learn what robot datasets contain and compare generalist policies without losing track of embodiment or evidence.</p>
+          </div>
+          <ol class="lesson-list">
+            <li><span class="lesson-time">3h</span><div><strong>Robot data in practice</strong><p>LeRobot datasets, policies, training, and evaluation · L08–L09</p></div></li>
+            <li><span class="lesson-time">2.5h</span><div><strong>From RT-1 to cross-embodiment data</strong><p>RT-1, RT-2, and Open X figures and evaluations · L15–L17</p></div></li>
+            <li><span class="lesson-time">2.5h</span><div><strong>Compare open generalists</strong><p>Octo, OpenVLA, SmolVLA, and π0 · L18–L21</p></div></li>
+            <li><span class="lesson-time">0.5h</span><div><strong>Choose a frontier question</strong><p>Use the awesome list with a purpose · L01</p></div></li>
+          </ol>
+          <aside class="deliverable"><span>Weekly output</span><p>A policy comparison table covering embodiment, inputs, actions, data, compute, and evidence.</p></aside>
+        </div>
+
+        <div class="week-panel" id="week-4" role="tabpanel" hidden>
+          <div class="week-summary">
+            <span class="week-number">04</span>
+            <div><p class="eyebrow">Systems thinking</p><h3>Run a credible experiment</h3></div>
+            <p>Turn architecture literacy into one small falsifiable result with exact revisions and retained evidence.</p>
+          </div>
+          <ol class="lesson-list">
+            <li><span class="lesson-time">1.5h</span><div><strong>End-to-end stack</strong><p>Selected NVIDIA architecture and workflow material · L10</p></div></li>
+            <li><span class="lesson-time">1h</span><div><strong>Embodied reasoning</strong><p>Gemini Robotics architecture and evaluation · L22</p></div></li>
+            <li><span class="lesson-time">2h</span><div><strong>Provenance & contracts</strong><p>Inspect revisions, execution boundaries, and platform differences</p></div></li>
+            <li><span class="lesson-time">4h</span><div><strong>Design, run, report</strong><p>Answer one falsifiable question and preserve raw output</p></div></li>
+          </ol>
+          <aside class="deliverable"><span>Weekly output</span><p>An experiment report with configuration, raw results, expectations, and interpretation.</p></aside>
+        </div>
+      </section>
+
+      <section class="section library-section" id="library">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Curated library</p>
+            <h2>Go deeper, deliberately</h2>
+          </div>
+          <p>Official courses, documentation, papers, and videos. Filter by the question you are trying to answer.</p>
+        </div>
+
+        <div class="library-controls">
+          <label class="search-box">
+            <span class="sr-only">Search resources</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m16 16 4 4"></path></svg>
+            <input id="resource-search" type="search" placeholder="Search resources, topics, or authors" />
+          </label>
+          <div class="filter-group" id="track-filters" aria-label="Filter by track">
+            <button class="filter active" data-track="all">All</button>
+            <button class="filter" data-track="Foundations">Foundations</button>
+            <button class="filter" data-track="Simulation">Simulation</button>
+            <button class="filter" data-track="Learning">Learning</button>
+            <button class="filter" data-track="LeRobot">LeRobot</button>
+            <button class="filter" data-track="VLA">VLA</button>
+            <button class="filter" data-track="Data">Data</button>
+            <button class="filter" data-track="Systems">Systems</button>
+          </div>
+        </div>
+
+        <div class="resource-status" aria-live="polite"><span id="resource-count">Loading resources…</span><span>Verified August 2026</span></div>
+        <div class="resource-grid" id="resource-grid"></div>
+        <div class="empty-state" id="empty-state" hidden>
+          <strong>No matching resources</strong>
+          <p>Try a broader search or choose another track.</p>
+        </div>
+      </section>
+
+      <section class="closing-section">
+        <p class="eyebrow">A practical bias</p>
+        <h2>Do not try to learn all of robotics in a month.</h2>
+        <p>
+          Learn enough structure to ask better questions. Run small things. Preserve evidence.
+          Let each experiment tell you what to study next.
+        </p>
+        <a class="button light" href="#top">Return to the beginning ↑</a>
+      </section>
+    </main>
+
+    <footer>
+      <p>Physical AI Field Guide · Maintained in the Physical AI Build Research repository.</p>
+      <p>Sources stay attributed to their original authors and institutions.</p>
+    </footer>
+  </body>
+</html>
