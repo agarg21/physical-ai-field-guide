@@ -21,7 +21,7 @@ The guide covers:
 
 - a conceptual Physical AI system architecture;
 - a bounded four-week curriculum;
-- weekly learning outputs; and
+- weekly learning outputs;
 - a searchable index of 26 official courses, papers, documentation sites, and videos; and
 - a sourced, searchable directory of 18 Physical AI companies in the United States and India.
 
