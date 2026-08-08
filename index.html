@@ -143,6 +143,26 @@
           <p>Each week has a bounded core, a tangible output, and optional depth that stays outside the time budget.</p>
         </div>
 
+        <div class="course-patterns" aria-label="Course design influences">
+          <div class="pattern-intro">
+            <p class="eyebrow">How this path is designed</p>
+            <h3>Borrow the teaching patterns, not the course bulk.</h3>
+            <p>Every lesson follows a compact <strong>learn → inspect → do → produce</strong> rhythm.</p>
+          </div>
+          <a href="https://modernrobotics.northwestern.edu/nu-gm-book-resource/foundations-of-robot-motion/" target="_blank" rel="noreferrer">
+            <span>Modern Robotics</span><strong>Short videos + transcripts</strong><small>Modular concepts you can revisit</small>
+          </a>
+          <a href="https://manipulation.csail.mit.edu/" target="_blank" rel="noreferrer">
+            <span>MIT Manipulation</span><strong>Notes + runnable examples</strong><small>Ideas connected to real systems</small>
+          </a>
+          <a href="https://rail.eecs.berkeley.edu/deeprlcourse/" target="_blank" rel="noreferrer">
+            <span>Berkeley CS285</span><strong>Lecture + assignment</strong><small>Understanding tested by doing</small>
+          </a>
+          <a href="https://huggingface.co/learn/robotics-course/en/unit0/introduction" target="_blank" rel="noreferrer">
+            <span>Hugging Face</span><strong>Cumulative units</strong><small>Objectives and prerequisites first</small>
+          </a>
+        </div>
+
         <div class="week-tabs" role="tablist" aria-label="Curriculum weeks">
           <button class="week-tab active" role="tab" aria-selected="true" aria-controls="week-1" data-week="1">
             <span>Week 01</span> Foundations
@@ -165,10 +185,42 @@
             <p>Build the vocabulary for bodies, frames, observations, actions, policies, controllers, and environments.</p>
           </div>
           <ol class="lesson-list">
-            <li><span class="lesson-time">2.5h</span><div><strong>Rigid motion & kinematics</strong><p>Modern Robotics introductions and selected videos · L02</p></div></li>
-            <li><span class="lesson-time">2h</span><div><strong>Manipulation as a system</strong><p>MIT introduction and robot/simulation chapter · L03</p></div></li>
-            <li><span class="lesson-time">2h</span><div><strong>Dynamics & feedback</strong><p>Underactuated overview and CartPole example · L04</p></div></li>
-            <li><span class="lesson-time">1h</span><div><strong>Draw the loop</strong><p>Annotate observation → decision → action for CartPole and an arm</p></div></li>
+            <li>
+              <span class="lesson-time">2.5h</span>
+              <div><strong>Rigid motion & kinematics</strong><p>Modern Robotics Chapters 2–3: configuration space, frames, and rigid-body motion.</p>
+                <div class="lesson-links">
+                  <a class="lesson-link watch" href="https://modernrobotics.northwestern.edu/nu-gm-book-resource/foundations-of-robot-motion/" target="_blank" rel="noreferrer"><span>Watch</span> Ch. 2–3 videos ↗</a>
+                  <a class="lesson-link optional" href="https://modernrobotics.northwestern.edu/nu-gm-book-resource/2-1-degrees-of-freedom-of-a-rigid-body/" target="_blank" rel="noreferrer"><span>Read</span> transcript & examples ↗</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <span class="lesson-time">2h</span>
+              <div><strong>Manipulation as a system</strong><p>See how geometry, sensing, simulation, planning, and control meet around a robot.</p>
+                <div class="lesson-links">
+                  <a class="lesson-link read" href="https://manipulation.csail.mit.edu/intro.html" target="_blank" rel="noreferrer"><span>Read</span> MIT introduction ↗</a>
+                  <a class="lesson-link optional" href="https://manipulation.csail.mit.edu/robot.html" target="_blank" rel="noreferrer"><span>Explore</span> robot & simulation ↗</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <span class="lesson-time">2h</span>
+              <div><strong>Dynamics & feedback</strong><p>Use CartPole to connect equations of motion, unstable equilibria, and feedback.</p>
+                <div class="lesson-links">
+                  <a class="lesson-link read" href="https://underactuated.mit.edu/acrobot.html" target="_blank" rel="noreferrer"><span>Read</span> CartPole chapter ↗</a>
+                  <a class="lesson-link watch" href="https://www.youtube.com/playlist?list=PLkx8KyIQkMfU5szP43GlE_S1QGSPQfL9s" target="_blank" rel="noreferrer"><span>Watch</span> MIT lectures ↗</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <span class="lesson-time">1h</span>
+              <div><strong>Draw the loop</strong><p>Annotate observation → decision → action for CartPole and one robot arm.</p>
+                <div class="lesson-links">
+                  <a class="lesson-link do" href="closed-loop-exercise.md"><span>Do</span> guided exercise ↓</a>
+                  <a class="lesson-link optional" href="https://gymnasium.farama.org/introduction/basic_usage/#understanding-the-agent-environment-loop" target="_blank" rel="noreferrer"><span>Reference</span> agent–environment loop ↗</a>
+                </div>
+              </div>
+            </li>
           </ol>
           <aside class="deliverable"><span>Weekly output</span><p>A one-page explanation of the seven essential system concepts.</p></aside>
         </div>
@@ -180,10 +232,44 @@
             <p>See how robot software, physics environments, imitation learning, and reinforcement learning fit together.</p>
           </div>
           <ol class="lesson-list">
-            <li><span class="lesson-time">1.5h</span><div><strong>Robot middleware</strong><p>ROS 2 concepts: nodes, topics, services, actions, bags · L05</p></div></li>
-            <li><span class="lesson-time">2.5h</span><div><strong>Physics & task environments</strong><p>Run MuJoCo and Gymnasium examples · L06–L07</p></div></li>
-            <li><span class="lesson-time">3h</span><div><strong>Behavior cloning & policy gradients</strong><p>Two selected CS285 lectures · L11–L13</p></div></li>
-            <li><span class="lesson-time">1.5h</span><div><strong>Modern action generation</strong><p>Diffusion Policy overview and architecture · L14</p></div></li>
+            <li>
+              <span class="lesson-time">1.5h</span>
+              <div><strong>Robot middleware</strong><p>Learn when robots use topics, services, actions, and recorded message streams.</p>
+                <div class="lesson-links">
+                  <a class="lesson-link read" href="https://docs.ros.org/en/rolling/Concepts/Basic/Interfaces-Topics-Services-Actions.html" target="_blank" rel="noreferrer"><span>Read</span> ROS interfaces ↗</a>
+                  <a class="lesson-link optional" href="https://docs.ros.org/en/jazzy/Tutorials/Beginner-CLI-Tools.html" target="_blank" rel="noreferrer"><span>Optional</span> CLI tutorials ↗</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <span class="lesson-time">2.5h</span>
+              <div><strong>Physics & task environments</strong><p>Distinguish a physics model, task definition, environment API, and rollout.</p>
+                <div class="lesson-links">
+                  <a class="lesson-link read" href="https://mujoco.readthedocs.io/en/stable/python.html#basic-usage" target="_blank" rel="noreferrer"><span>Read</span> MuJoCo Python basics ↗</a>
+                  <a class="lesson-link do" href="https://gymnasium.farama.org/introduction/basic_usage/" target="_blank" rel="noreferrer"><span>Run</span> Gymnasium example ↗</a>
+                  <a class="lesson-link optional" href="simulator-trace-exercise.md"><span>Template</span> capture a trace ↓</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <span class="lesson-time">3h</span>
+              <div><strong>Behavior cloning & policy gradients</strong><p>Compare learning from demonstrations with learning from sampled rewards.</p>
+                <div class="lesson-links">
+                  <a class="lesson-link watch" href="https://www.youtube.com/playlist?list=PL_iWQOsE6TfVYGEGiAOMaOzzv41Jfm_Ps" target="_blank" rel="noreferrer"><span>Watch</span> CS285 lectures 2 & 5 ↗</a>
+                  <a class="lesson-link read" href="https://rail.eecs.berkeley.edu/deeprlcourse/static/slides/lec-2.pdf" target="_blank" rel="noreferrer"><span>Read</span> behavior cloning slides ↗</a>
+                  <a class="lesson-link read" href="https://rail.eecs.berkeley.edu/deeprlcourse/static/slides/lec-5.pdf" target="_blank" rel="noreferrer"><span>Read</span> policy gradient slides ↗</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <span class="lesson-time">1.5h</span>
+              <div><strong>Modern action generation</strong><p>Inspect why diffusion models are useful for multimodal action sequences.</p>
+                <div class="lesson-links">
+                  <a class="lesson-link watch" href="https://diffusion-policy.cs.columbia.edu/" target="_blank" rel="noreferrer"><span>Watch</span> project demos ↗</a>
+                  <a class="lesson-link optional" href="https://arxiv.org/abs/2303.04137" target="_blank" rel="noreferrer"><span>Read</span> paper overview ↗</a>
+                </div>
+              </div>
+            </li>
           </ol>
           <aside class="deliverable"><span>Weekly output</span><p>A reproducible reset/step trace and an IL-versus-RL comparison.</p></aside>
         </div>
@@ -195,10 +281,45 @@
             <p>Learn what robot datasets contain and compare generalist policies without losing track of embodiment or evidence.</p>
           </div>
           <ol class="lesson-list">
-            <li><span class="lesson-time">3h</span><div><strong>Robot data in practice</strong><p>LeRobot datasets, policies, training, and evaluation · L08–L09</p></div></li>
-            <li><span class="lesson-time">2.5h</span><div><strong>From RT-1 to cross-embodiment data</strong><p>RT-1, RT-2, and Open X figures and evaluations · L15–L17</p></div></li>
-            <li><span class="lesson-time">2.5h</span><div><strong>Compare open generalists</strong><p>Octo, OpenVLA, SmolVLA, and π0 · L18–L21</p></div></li>
-            <li><span class="lesson-time">0.5h</span><div><strong>Choose a frontier question</strong><p>Use the awesome list with a purpose · L01</p></div></li>
+            <li>
+              <span class="lesson-time">3h</span>
+              <div><strong>Robot data in practice</strong><p>Open an episode and identify observations, actions, timestamps, tasks, and metadata.</p>
+                <div class="lesson-links">
+                  <a class="lesson-link read" href="https://huggingface.co/learn/robotics-course/en/unit1/3" target="_blank" rel="noreferrer"><span>Read</span> LeRobotDataset lesson ↗</a>
+                  <a class="lesson-link optional" href="https://huggingface.co/docs/lerobot/index" target="_blank" rel="noreferrer"><span>Reference</span> LeRobot docs ↗</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <span class="lesson-time">2.5h</span>
+              <div><strong>From RT-1 to cross-embodiment data</strong><p>Read architecture figures and evaluation tables rather than every paper line.</p>
+                <div class="lesson-links">
+                  <a class="lesson-link read" href="https://robotics-transformer1.github.io/" target="_blank" rel="noreferrer"><span>Read</span> RT-1 ↗</a>
+                  <a class="lesson-link read" href="https://robotics-transformer2.github.io/" target="_blank" rel="noreferrer"><span>Read</span> RT-2 ↗</a>
+                  <a class="lesson-link read" href="https://robotics-transformer-x.github.io/" target="_blank" rel="noreferrer"><span>Read</span> Open X ↗</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <span class="lesson-time">2.5h</span>
+              <div><strong>Compare open generalists</strong><p>Track inputs, action representation, training data, adaptation, and evidence.</p>
+                <div class="lesson-links">
+                  <a class="lesson-link read" href="https://octo-models.github.io/" target="_blank" rel="noreferrer"><span>Read</span> Octo ↗</a>
+                  <a class="lesson-link read" href="https://openvla.github.io/" target="_blank" rel="noreferrer"><span>Read</span> OpenVLA ↗</a>
+                  <a class="lesson-link read" href="https://huggingface.co/blog/smolvla" target="_blank" rel="noreferrer"><span>Read</span> SmolVLA ↗</a>
+                  <a class="lesson-link optional" href="https://www.physicalintelligence.company/blog/pi0" target="_blank" rel="noreferrer"><span>Optional</span> π0 ↗</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <span class="lesson-time">0.5h</span>
+              <div><strong>Choose a frontier question</strong><p>Use the awesome list only after writing down the specific question you want to answer.</p>
+                <div class="lesson-links">
+                  <a class="lesson-link read" href="https://github.com/keon/awesome-physical-ai" target="_blank" rel="noreferrer"><span>Browse</span> Awesome Physical AI ↗</a>
+                  <a class="lesson-link do" href="policy-comparison-template.md"><span>Do</span> comparison template ↓</a>
+                </div>
+              </div>
+            </li>
           </ol>
           <aside class="deliverable"><span>Weekly output</span><p>A policy comparison table covering embodiment, inputs, actions, data, compute, and evidence.</p></aside>
         </div>
@@ -210,10 +331,40 @@
             <p>Turn architecture literacy into one small falsifiable result with exact revisions and retained evidence.</p>
           </div>
           <ol class="lesson-list">
-            <li><span class="lesson-time">1.5h</span><div><strong>End-to-end stack</strong><p>Selected NVIDIA architecture and workflow material · L10</p></div></li>
-            <li><span class="lesson-time">1h</span><div><strong>Embodied reasoning</strong><p>Gemini Robotics architecture and evaluation · L22</p></div></li>
-            <li><span class="lesson-time">2h</span><div><strong>Provenance & contracts</strong><p>Inspect revisions, execution boundaries, and platform differences</p></div></li>
-            <li><span class="lesson-time">4h</span><div><strong>Design, run, report</strong><p>Answer one falsifiable question and preserve raw output</p></div></li>
+            <li>
+              <span class="lesson-time">1.5h</span>
+              <div><strong>End-to-end stack</strong><p>Map simulation, synthetic data, training, evaluation, and deployment without installing the entire stack.</p>
+                <div class="lesson-links">
+                  <a class="lesson-link watch" href="https://docs.nvidia.com/learning/physical-ai/index.html" target="_blank" rel="noreferrer"><span>Watch</span> selected NVIDIA modules ↗</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <span class="lesson-time">1h</span>
+              <div><strong>Embodied reasoning</strong><p>Identify what belongs to semantic reasoning versus direct action generation.</p>
+                <div class="lesson-links">
+                  <a class="lesson-link read" href="https://deepmind.google/discover/blog/gemini-robotics-brings-ai-into-the-physical-world/" target="_blank" rel="noreferrer"><span>Read</span> Gemini Robotics ↗</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <span class="lesson-time">2h</span>
+              <div><strong>Provenance & contracts</strong><p>Inspect revisions, trust boundaries, environment APIs, and what automated checks can actually prove.</p>
+                <div class="lesson-links">
+                  <a class="lesson-link read" href="https://huggingface.co/docs/lerobot/envhub" target="_blank" rel="noreferrer"><span>Read</span> LeRobot EnvHub ↗</a>
+                  <a class="lesson-link optional" href="https://gymnasium.farama.org/api/utils/#gymnasium.utils.env_checker.check_env" target="_blank" rel="noreferrer"><span>Inspect</span> Gymnasium checks ↗</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <span class="lesson-time">4h</span>
+              <div><strong>Design, run, report</strong><p>Answer one falsifiable question and retain enough raw evidence for another person to inspect.</p>
+                <div class="lesson-links">
+                  <a class="lesson-link do" href="experiment-report-template.md"><span>Do</span> experiment template ↓</a>
+                  <a class="lesson-link optional" href="https://rail.eecs.berkeley.edu/deeprlcourse/deeprlcourse/static/homeworks/hw1.pdf" target="_blank" rel="noreferrer"><span>Model</span> CS285 assignment style ↗</a>
+                </div>
+              </div>
+            </li>
           </ol>
           <aside class="deliverable"><span>Weekly output</span><p>An experiment report with configuration, raw results, expectations, and interpretation.</p></aside>
         </div>
