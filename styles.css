@@ -123,6 +123,16 @@ h1 em { color: var(--moss); font-weight: 500; }
 .evidence-rail span { color: var(--lime); font: .65rem var(--mono); text-transform: uppercase; }
 
 .curriculum-section { background: var(--surface); }
+.course-patterns { display: grid; grid-template-columns: 1.3fr repeat(4, 1fr); margin-bottom: 2.5rem; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: var(--paper); }
+.pattern-intro { padding: 1.4rem; }
+.pattern-intro .eyebrow { margin-bottom: .75rem; }
+.pattern-intro h3 { margin-bottom: .5rem; font: 600 1.55rem/1.05 var(--serif); }
+.pattern-intro p:last-child { margin: 0; color: var(--muted); font-size: .68rem; line-height: 1.5; }
+.course-patterns > a { display: flex; flex-direction: column; min-height: 155px; padding: 1.4rem; border-left: 1px solid var(--line); text-decoration: none; transition: background .2s; }
+.course-patterns > a:hover { background: var(--surface); }
+.course-patterns > a span { margin-bottom: auto; color: var(--moss); font: .55rem var(--mono); text-transform: uppercase; }
+.course-patterns > a strong { margin: 1.7rem 0 .35rem; font: 600 1rem/1.1 var(--serif); }
+.course-patterns > a small { color: var(--muted); font-size: .6rem; line-height: 1.4; }
 .week-tabs { display: grid; grid-template-columns: repeat(4, 1fr); margin-bottom: 1.25rem; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
 .week-tab { min-height: 76px; padding: 1rem; border: 0; border-right: 1px solid var(--line); color: var(--muted); background: transparent; cursor: pointer; font-size: .78rem; font-weight: 600; text-align: left; }
 .week-tab:last-child { border-right: 0; }
@@ -139,6 +149,14 @@ h1 em { color: var(--moss); font-weight: 500; }
 .lesson-time { padding-top: .2rem; color: var(--moss); font: .65rem var(--mono); }
 .lesson-list strong { font-size: .85rem; }
 .lesson-list p { margin: .35rem 0 0; color: var(--muted); font-size: .76rem; line-height: 1.5; }
+.lesson-links { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .8rem; }
+.lesson-link { display: inline-flex; gap: .35rem; align-items: center; padding: .42rem .62rem; border: 1px solid var(--line); border-radius: 999px; color: var(--ink); background: rgba(251, 250, 246, .7); font-size: .58rem; font-weight: 600; text-decoration: none; transition: transform .2s, border-color .2s; }
+.lesson-link:hover { transform: translateY(-1px); border-color: var(--moss); }
+.lesson-link span { font: 500 .5rem var(--mono); letter-spacing: .04em; text-transform: uppercase; }
+.lesson-link.watch span { color: var(--coral); }
+.lesson-link.read span { color: var(--blue); }
+.lesson-link.do span { color: var(--moss); }
+.lesson-link.optional { color: var(--muted); border-style: dashed; }
 .deliverable { grid-column: 2; display: grid; grid-template-columns: 120px 1fr; gap: 1rem; align-items: center; padding: 1.25rem; border-radius: 12px; color: white; background: var(--moss); }
 .deliverable span { color: var(--lime); font: .58rem var(--mono); text-transform: uppercase; }
 .deliverable p { margin: 0; font-size: .77rem; line-height: 1.5; }
@@ -187,6 +205,10 @@ footer p { margin: 0; }
   .arch-card h3 { margin-top: 1.4rem; }
   .learning-plane { grid-template-columns: 1fr; }
   .learning-label { border-right: 0; border-bottom: 1px solid #41504a; }
+  .course-patterns { grid-template-columns: repeat(2, 1fr); }
+  .pattern-intro { grid-column: 1 / -1; }
+  .course-patterns > a { border-top: 1px solid var(--line); }
+  .course-patterns > a:nth-of-type(odd) { border-left: 0; }
   .resource-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
@@ -206,6 +228,8 @@ footer p { margin: 0; }
   .section-heading h2, .closing-section h2 { font-size: 3.25rem; }
   .architecture-flow { padding: 1rem; }
   .learning-items, .evidence-rail { grid-template-columns: repeat(2, 1fr); }
+  .course-patterns { grid-template-columns: 1fr; }
+  .course-patterns > a { min-height: 125px; border-left: 0; }
   .week-tabs { grid-template-columns: repeat(2, 1fr); }
   .week-tab:nth-child(2) { border-right: 0; }
   .week-tab:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
