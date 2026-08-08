@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="A practical four-week guide to the foundations, systems, data, and models behind Physical AI."
+      content="A practical four-week guide to Physical AI, plus a sourced directory of US and Indian robotics companies."
     />
     <meta name="theme-color" content="#f4f0e8" />
     <title>Physical AI — A Four-Week Technical Guide</title>
@@ -30,6 +30,7 @@
         <a href="#architecture">Architecture</a>
         <a href="#curriculum">Four weeks</a>
         <a href="#library">Library</a>
+        <a href="#companies">Companies</a>
       </nav>
       <a
         class="repo-link"
@@ -158,7 +159,7 @@
           <a href="https://rail.eecs.berkeley.edu/deeprlcourse/" target="_blank" rel="noreferrer">
             <span>Berkeley CS285</span><strong>Lecture + assignment</strong><small>Understanding tested by doing</small>
           </a>
-          <a href="https://huggingface.co/learn/robotics-course/en/unit0/introduction" target="_blank" rel="noreferrer">
+          <a href="https://huggingface.co/learn/robotics-course/en/unit0/1" target="_blank" rel="noreferrer">
             <span>Hugging Face</span><strong>Cumulative units</strong><small>Objectives and prerequisites first</small>
           </a>
         </div>
@@ -236,7 +237,7 @@
               <span class="lesson-time">1.5h</span>
               <div><strong>Robot middleware</strong><p>Learn when robots use topics, services, actions, and recorded message streams.</p>
                 <div class="lesson-links">
-                  <a class="lesson-link read" href="https://docs.ros.org/en/rolling/Concepts/Basic/Interfaces-Topics-Services-Actions.html" target="_blank" rel="noreferrer"><span>Read</span> ROS interfaces ↗</a>
+                  <a class="lesson-link read" href="https://docs.ros.org/en/jazzy/How-To-Guides/Topics-Services-Actions.html" target="_blank" rel="noreferrer"><span>Read</span> ROS interfaces ↗</a>
                   <a class="lesson-link optional" href="https://docs.ros.org/en/jazzy/Tutorials/Beginner-CLI-Tools.html" target="_blank" rel="noreferrer"><span>Optional</span> CLI tutorials ↗</a>
                 </div>
               </div>
@@ -361,7 +362,7 @@
               <div><strong>Design, run, report</strong><p>Answer one falsifiable question and retain enough raw evidence for another person to inspect.</p>
                 <div class="lesson-links">
                   <a class="lesson-link do" href="experiment-report-template.md"><span>Do</span> experiment template ↓</a>
-                  <a class="lesson-link optional" href="https://rail.eecs.berkeley.edu/deeprlcourse/deeprlcourse/static/homeworks/hw1.pdf" target="_blank" rel="noreferrer"><span>Model</span> CS285 assignment style ↗</a>
+                  <a class="lesson-link optional" href="https://rail.eecs.berkeley.edu/deeprlcourse/static/homeworks/hw1.pdf" target="_blank" rel="noreferrer"><span>Model</span> CS285 assignment style ↗</a>
                 </div>
               </div>
             </li>
@@ -402,6 +403,51 @@
         <div class="empty-state" id="empty-state" hidden>
           <strong>No matching resources</strong>
           <p>Try a broader search or choose another track.</p>
+        </div>
+      </section>
+
+      <section class="section companies-section" id="companies">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Business landscape</p>
+            <h2>Who is building Physical AI?</h2>
+          </div>
+          <p>
+            A sourced snapshot of US and Indian companies: what they build, who they serve,
+            and the latest financing or valuation we could verify.
+          </p>
+        </div>
+
+        <div class="company-methodology">
+          <div><strong>18</strong><span>companies tracked</span></div>
+          <p>
+            Funding and valuation figures are disclosure snapshots, not live estimates. Transaction values,
+            pre-money values, and post-money valuations are labeled separately and should not be compared as if equivalent.
+          </p>
+          <a href="https://github.com/agarg21/physical-ai-field-guide/blob/main/business-index-methodology.md" target="_blank" rel="noreferrer">Read the methodology ↗</a>
+        </div>
+
+        <div class="company-controls">
+          <label class="search-box company-search-box">
+            <span class="sr-only">Search companies</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m16 16 4 4"></path></svg>
+            <input id="company-search" type="search" placeholder="Search company, product, or market" />
+          </label>
+          <div class="filter-group" id="country-filters" aria-label="Filter companies by country">
+            <button class="filter company-filter active" data-country="all">All</button>
+            <button class="filter company-filter" data-country="US">United States</button>
+            <button class="filter company-filter" data-country="India">India</button>
+          </div>
+        </div>
+
+        <div class="company-status" aria-live="polite">
+          <span id="company-count">Loading companies…</span>
+          <span>Verified August 7, 2026</span>
+        </div>
+        <div class="company-grid" id="company-grid"></div>
+        <div class="empty-state company-empty-state" id="company-empty-state" hidden>
+          <strong>No matching companies</strong>
+          <p>Try a broader search or include both countries.</p>
         </div>
       </section>
 
