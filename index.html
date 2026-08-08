@@ -28,6 +28,7 @@
       </a>
       <nav aria-label="Primary navigation">
         <a href="#architecture">Architecture</a>
+        <a href="#experiment">Experiment</a>
         <a href="#curriculum">Four weeks</a>
         <a href="#library">Library</a>
         <a href="#companies">Companies</a>
@@ -133,6 +134,130 @@
             <span>Safety</span><span>Observability</span><span>Provenance</span><span>Reproducibility</span>
           </div>
         </div>
+      </section>
+
+      <section class="section experiment-section" id="experiment">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">A measured π0 experiment</p>
+            <h2>From demonstration to verdict</h2>
+          </div>
+          <p>
+            This is the actual alphabet-soup experiment behind the field guide. Follow one expert
+            demonstration into supervised post-training, then watch the policy act autonomously in
+            simulation. Training loss and task success answer different questions.
+          </p>
+        </div>
+
+        <div class="experiment-facts" aria-label="Experiment summary">
+          <div><strong>35</strong><span>training demonstrations</span></div>
+          <div><strong>9</strong><span>validation demonstrations</span></div>
+          <div><strong>50 × 7</strong><span>numbers per action chunk</span></div>
+          <div><strong>20</strong><span>autonomous test rollouts</span></div>
+          <div><strong>16 / 20</strong><span>baseline and candidate</span></div>
+        </div>
+
+        <div class="experiment-pipeline" aria-label="Training and evaluation pipeline">
+          <article class="pipeline-card">
+            <span class="pipeline-index">01 · Demonstrate</span>
+            <h3>Record successful behavior</h3>
+            <p>An expert supplies camera observations, robot state, and the correct seven-dimensional action at every step.</p>
+            <div class="pipeline-tags"><span>2 cameras</span><span>8D state</span><span>7D action</span></div>
+          </article>
+          <div class="pipeline-arrow" aria-hidden="true">→</div>
+          <article class="pipeline-card model-card">
+            <span class="pipeline-index">02 · Learn</span>
+            <h3>Fit the action expert</h3>
+            <p>π0 uses flow matching to learn a distribution over 50-step continuous action chunks conditioned on images, state, and language.</p>
+            <div class="prediction-chip"><span>Model output</span><strong>50 actions × 7 controls</strong><small>translation · rotation · gripper</small></div>
+          </article>
+          <div class="pipeline-arrow" aria-hidden="true">→</div>
+          <article class="pipeline-card">
+            <span class="pipeline-index">03 · Evaluate</span>
+            <h3>Remove the expert</h3>
+            <p>The simulator resets to a declared initial state. The model acts from its own observations until success or the 280-step limit.</p>
+            <div class="pipeline-tags"><span>closed loop</span><span>binary success</span><span>fixed seeds</span></div>
+          </article>
+        </div>
+
+        <div class="demo-block">
+          <div class="demo-copy">
+            <p class="eyebrow">Training data · episode 813</p>
+            <h3>One expert demonstration</h3>
+            <p>
+              These are five frames from a real demonstration used in our post-training set. The
+              policy learns from the recorded actions between frames—it does not merely memorize this
+              visual storyboard.
+            </p>
+            <p class="media-source">Source: <a href="https://huggingface.co/datasets/HuggingFaceVLA/libero" target="_blank" rel="noreferrer">HuggingFaceVLA/libero</a>, episode 813.</p>
+            <ol>
+              <li><span>01</span>Observe the scene and instruction</li>
+              <li><span>02</span>Reach toward the alphabet-soup can</li>
+              <li><span>03</span>Close the gripper around the can</li>
+              <li><span>04</span>Lift and transport it</li>
+              <li><span>05</span>Place it inside the basket</li>
+            </ol>
+          </div>
+          <div class="demo-storyboard" aria-label="Five frames from an expert alphabet-soup demonstration">
+            <figure><img src="assets/pi0-evaluation/training/demo-1.jpg" alt="Robot arm at the start of the expert demonstration" loading="lazy" /><figcaption>Start</figcaption></figure>
+            <figure><img src="assets/pi0-evaluation/training/demo-2.jpg" alt="Robot arm reaching toward the alphabet-soup can" loading="lazy" /><figcaption>Reach</figcaption></figure>
+            <figure><img src="assets/pi0-evaluation/training/demo-3.jpg" alt="Robot gripper closing around the alphabet-soup can" loading="lazy" /><figcaption>Grasp</figcaption></figure>
+            <figure><img src="assets/pi0-evaluation/training/demo-4.jpg" alt="Robot lifting and transporting the alphabet-soup can" loading="lazy" /><figcaption>Transport</figcaption></figure>
+            <figure><img src="assets/pi0-evaluation/training/demo-5.jpg" alt="Robot placing the alphabet-soup can into the basket" loading="lazy" /><figcaption>Place</figcaption></figure>
+          </div>
+        </div>
+
+        <div class="evaluation-explainer">
+          <div>
+            <p class="eyebrow">Evaluation · no action labels</p>
+            <h3>The simulator closes the loop</h3>
+          </div>
+          <div class="eval-loop" aria-label="Closed-loop simulator evaluation">
+            <span>Reset scene</span><b>→</b><span>Observe</span><b>→</b><span>Predict actions</span><b>→</b><span>Execute</span><b>↺</b>
+          </div>
+          <p>
+            The only final score is whether the can reaches the basket. We used 20 fixed simulator
+            initial states; these are autonomous rollouts, not replays of demonstration actions. This
+            tests same-task specialization, not generalization to an unseen task.
+          </p>
+        </div>
+
+        <div class="rollout-heading">
+          <div><p class="eyebrow">Paired rollouts</p><h3>Same seed, different checkpoint</h3></div>
+          <p>Press play and compare the external-camera view. These three cases explain why the aggregate result was a 16/20 tie.</p>
+        </div>
+
+        <div class="rollout-grid">
+          <article class="rollout-card improved">
+            <div class="rollout-title"><div><span>Seed 1000</span><h4>Post-training recovered a failure</h4></div><strong>Improved</strong></div>
+            <div class="video-pair">
+              <figure><video controls muted loop playsinline preload="metadata" aria-label="Baseline failure on seed 1000"><source src="assets/pi0-evaluation/rollouts/seed-1000-baseline.mp4" type="video/mp4" /></video><figcaption><span class="outcome failure">Failure</span>Published baseline</figcaption></figure>
+              <figure><video controls muted loop playsinline preload="metadata" aria-label="Post-trained success on seed 1000"><source src="assets/pi0-evaluation/rollouts/seed-1000-post-trained.mp4" type="video/mp4" /></video><figcaption><span class="outcome success">Success</span>Post-trained</figcaption></figure>
+            </div>
+          </article>
+
+          <article class="rollout-card regressed">
+            <div class="rollout-title"><div><span>Seed 1001</span><h4>Post-training introduced a failure</h4></div><strong>Regressed</strong></div>
+            <div class="video-pair">
+              <figure><video controls muted loop playsinline preload="metadata" aria-label="Baseline success on seed 1001"><source src="assets/pi0-evaluation/rollouts/seed-1001-baseline.mp4" type="video/mp4" /></video><figcaption><span class="outcome success">Success</span>Published baseline</figcaption></figure>
+              <figure><video controls muted loop playsinline preload="metadata" aria-label="Post-trained failure on seed 1001"><source src="assets/pi0-evaluation/rollouts/seed-1001-post-trained.mp4" type="video/mp4" /></video><figcaption><span class="outcome failure">Failure</span>Post-trained</figcaption></figure>
+            </div>
+          </article>
+
+          <article class="rollout-card unchanged">
+            <div class="rollout-title"><div><span>Seed 1002</span><h4>Both checkpoints completed the task</h4></div><strong>Unchanged</strong></div>
+            <div class="video-pair">
+              <figure><video controls muted loop playsinline preload="metadata" aria-label="Baseline success on seed 1002"><source src="assets/pi0-evaluation/rollouts/seed-1002-baseline.mp4" type="video/mp4" /></video><figcaption><span class="outcome success">Success</span>Published baseline</figcaption></figure>
+              <figure><video controls muted loop playsinline preload="metadata" aria-label="Post-trained success on seed 1002"><source src="assets/pi0-evaluation/rollouts/seed-1002-post-trained.mp4" type="video/mp4" /></video><figcaption><span class="outcome success">Success</span>Post-trained</figcaption></figure>
+            </div>
+          </article>
+        </div>
+
+        <aside class="experiment-verdict">
+          <div><span>Measured verdict</span><strong>Inconclusive tie</strong></div>
+          <p>Three baseline failures improved, but three baseline successes regressed. Better training loss did not produce a better closed-loop success rate.</p>
+          <a href="https://github.com/agarg21/physical-ai-build-research/blob/agent/learning-business-indexes/experiments/pi0-libero-smoke/result-post-trained-20-episodes.json" target="_blank" rel="noreferrer">Inspect the machine-readable result ↗</a>
+        </aside>
       </section>
 
       <section class="section curriculum-section" id="curriculum">
