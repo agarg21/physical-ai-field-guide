@@ -2,7 +2,20 @@
 
 A public, interactive version of the four-week Physical AI technical learning guide.
 
-Website: https://agarg21.github.io/physical-ai-field-guide/
+## Start here
+
+- [Open the complete field guide](https://agarg21.github.io/physical-ai-field-guide/)
+- [See the Physical AI architecture map](https://agarg21.github.io/physical-ai-field-guide/#architecture)
+- [Start the four-week curriculum](https://agarg21.github.io/physical-ai-field-guide/#curriculum)
+- [Browse the technical learning library](https://agarg21.github.io/physical-ai-field-guide/#library)
+- [Explore US and India companies](https://agarg21.github.io/physical-ai-field-guide/#companies)
+
+## Research data
+
+- [Technical learning index](./technical-learning-index.csv)
+- [US Physical AI companies](./us-physical-ai-companies.csv)
+- [India Physical AI companies](./india-physical-ai-companies.csv)
+- [Business-index methodology](./business-index-methodology.md)
 
 The guide covers:
 
